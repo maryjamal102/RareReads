@@ -1,0 +1,17 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-wrapper{
+    background-image: url(../assets/images/WhatsApp\ Image\ 2025-08-03\ at\ 21.50.23_8a973fc5.jpg);
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-shadow: 0px 10px 30px rgb(35, 10, 10);
+}

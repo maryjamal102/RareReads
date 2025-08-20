@@ -1,0 +1,30 @@
+<section>
+<div class="text">
+<h2 *ngIf="!searchTerm">-Book Categories-</h2>
+</div>
+<div class="categories">
+  <div class="buttons" *ngIf="!searchTerm">
+  <button *ngFor="let category of categories" (click)="selectCategory(category)" [ngClass]="{'active-category': selectedCategory === category}"
+  class="category-button">
+    {{ category }}
+  </button>
+  </div>
+</div> 
+<div *ngIf="loading" class="loader-container">
+  <div class="loader"></div>
+</div>
+<p *ngIf="!categorySelected"></p>
+<div class="book-grid">
+  <div class="book-card" *ngFor="let book of books" (click)="viewBookDetails(book)">
+    <img [src]="book.volumeInfo.imageLinks?.thumbnail" alt="{{ book.volumeInfo.title }}" />
+    <h3>{{ book.volumeInfo.title }}</h3>
+    <p class="author">{{ book.volumeInfo.authors?.join(', ') || 'Unknown' }}</p>
+    <p class="price"><strong>Price:</strong> {{ book?.saleInfo?.listPrice?.amount || 'N/A' }} {{ book?.saleInfo?.listPrice?.currencyCode || '' }}</p>
+    <button (click)="addToCart(book)">Add to Cart</button>
+  </div>
+</div>
+</section>
+
+<footer class="footer">
+    <p>Developed by <a href="https://github.com/maryjamal102" target="_blank">MJ</a>. &copy; 2025 RareReads. All rights reserved.</p>
+  </footer>

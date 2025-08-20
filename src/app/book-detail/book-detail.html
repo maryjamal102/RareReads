@@ -1,0 +1,25 @@
+<div class="book-detail-wrapper">
+<div *ngIf="loading" class="loader-container">
+  <div class="loader"></div>
+</div>
+
+
+ <div class="book-detail-container" *ngIf="book">
+  <div class="book-image">
+    <img [src]="book.volumeInfo.imageLinks?.thumbnail" alt="{{ book.volumeInfo.title }}" />
+  </div>
+
+  <div class="book-info">
+    <h2>{{ book.volumeInfo.title }}</h2>
+    <h4>by {{ book.volumeInfo.authors?.join(', ') || 'Unknown' }}</h4>
+    <p>{{ stripHtmlTags(book.volumeInfo.description || 'No description available.') }}</p>
+    <p class="price">Price: {{ book.saleInfo?.listPrice?.amount || 'N/A' }} {{ book.saleInfo?.listPrice?.currencyCode || '' }}</p>
+    <div class="quantity">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" [(ngModel)]="selectedQuantity" min="1" />
+    </div>
+ 
+    <button (click)="addToCart(book, selectedQuantity)">Add to Cart</button>
+  </div>
+</div>
+</div>

@@ -1,0 +1,48 @@
+.checkout-form {
+  max-width: 500px;
+  margin: auto;
+  padding: 2rem;
+  background: #ffffff2c ;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.628);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.checkout-form h2{
+  color: #1d120e;
+}
+
+label{
+  color: #261811;
+}
+
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: 1px solid rgb(39, 20, 20);
+  background-color: rgba(227, 178, 178, 0.5);
+  color: #3d271d;
+}
+
+.checkout-form select option{
+  background-color: #ac8c7e;
+}
+
+.checkout-form button {
+  background-color: #5c3d2e;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.checkout-form button:hover{
+  background-color: #302018;
+}
