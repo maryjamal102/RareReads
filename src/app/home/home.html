@@ -1,0 +1,29 @@
+<div class="intro" *ngIf="!isSearching">
+<h1>Welcome to...</h1>
+<h3>Rare Reads.</h3>
+<p>what time is trying to bury</p>
+<button class="icon" (click)="scrollToBooks()">▽</button>
+</div>
+
+<div class="home-container" *ngIf="books.length > 0" #bookSection>
+  <h2 class="entryText" *ngIf="!isSearching">Here are some <span class="rares">Rares</span> you can check out:</h2>
+  <h2 class="searchText" *ngIf="isSearching">Searched results:</h2>
+ 
+ <div class="book-grid">
+  <div class="book-card" *ngFor="let book of books" (click)="viewBookDetails(book)">
+    <img [src]="book.volumeInfo.imageLinks?.thumbnail" alt="{{ book.volumeInfo.title }}" />
+    <h3>{{ book.volumeInfo.title }}</h3>
+    <p class="author">by: {{ book.volumeInfo.authors?.join(', ') || 'N/A' }}</p>
+    <p class="price"><strong>Price:</strong> {{ book?.saleInfo?.listPrice?.amount || 'N/A' }} {{ book?.saleInfo?.listPrice?.currencyCode || '' }}</p>
+    <button (click)="addToCart(book); $event.stopPropagation()">Add to Cart</button>
+  </div>
+
+
+  <p *ngIf="isSearching && books.length === 0" class="no-results">No books found for your search.</p>
+</div>
+
+<footer class="footer">
+    <p>Developed by <a href="https://github.com/maryjamal102" target="_blank">MJ</a>. &copy; 2025 RareReads. All rights reserved.</p>
+  </footer>
+</div>
+

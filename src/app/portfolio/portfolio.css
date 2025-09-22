@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-size: cover;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #fff4e06d;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  gap: 2rem;
+}
+
+.brand h1 {
+  font-size: 3rem;
+  margin-bottom: 0;
+  color: #fdf5e3e2;
+  font-weight: normal;
+  font-family: 'Great Vibes', serif;
+  font-style: italic;
+}
+
+.socials {
+  margin: 2rem 0;
+}
+
+.socials h2,
+.contact h2 {
+  color: #d2a39d;
+  margin-bottom: 1rem;
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 1.8rem;
+}
+
+.icons a {
+  color: #491b15;
+  transition: color 0.3s ease;
+}
+
+.socials .icons i {
+  color: #491b15;
+  background-color: #fff4e0a5;
+  padding: 10px 25px 8px 10px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.socials .icons i:hover {
+  background-color: #fff4e08c;
+  transform: scale(1.1);
+}
+
+.contact {
+  margin-top: 3rem;
+  line-height: 2;
+  color: #fff4e0a8;
+}
+
+.contact h2 {
+  color: #d2a39d;
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+}
+
+.contact p i {
+  color: #fff4e0bd;
+}
+
+.footer {
+  border-top: 1px solid #ccc;
+  padding-top: 35px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.footer a {
+  color: #3500b1;
+  text-decoration: none;
+  font-weight: normal;
+  font-family: 'Great Vibes', serif;
+  font-style: italic;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .brand h1 {
+    font-size: 2.2rem;
+  }
+
+  .socials h2,
+  .contact h2 {
+    font-size: 22px;
+  }
+
+  .icons {
+    flex-direction: row;
+    gap: 15px;
+    font-size: 1.4rem;
+  }
+
+  .socials .icons i {
+    padding: 10px 25px 8px 10px;
+  }
+
+  .contact p {
+    font-size: 14px;
+  }
+
+  .footer {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 601px) {
+  .brand h1 {
+    font-size: 2.6rem;
+  }
+
+  .socials h2,
+  .contact h2 {
+    font-size: 26px;
+  }
+
+  .icons {
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 1.6rem;
+  }
+
+  .contact p {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,31 @@
+<div class="cart-background cart-container">
+
+  <div class="cart-items">
+    <div class="cart-item" *ngFor="let item of cartItems; trackBy: trackById">
+      <img [src]="item.volumeInfo.imageLinks?.thumbnail" alt="{{ item.volumeInfo.title }}" class="item-image" />
+
+      <div class="item-details">
+        <h3 class="item-title">{{ item.volumeInfo.title }}</h3>
+        <p class="item-desc">{{ item.volumeInfo.categories?.[0] || 'No category' }}</p>
+        <p class="item-price">Price: {{ item.saleInfo?.listPrice?.amount || 'N/A' }} {{ item.saleInfo?.listPrice?.currencyCode }}</p>
+        <div class="quantity-control">
+          Quantity: {{item.quantity}}
+        </div>
+      </div> 
+      <div class="item-summary">
+        <p class="item-total">Total: {{ (item.saleInfo?.listPrice?.amount || 'N/A') * item.quantity }}</p>
+        <button class="remove-btn" (click)="removeItem(item.id)">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </div>
+    <p *ngIf="cartItems.length === 0" class="empty-cart">🛒 Your cart is empty</p>
+  </div>
+  <div class="order-summary">
+    <h2>Your Order</h2>
+    <p>Items: {{ cartItems.length }}</p>
+    <p>Subtotal: {{ calculateSubtotal() }}</p>
+    <h3>Total: {{ calculateSubtotal() }}</h3>
+    <button class="checkout-btn" (click)="goToCheckout()">Proceed to Checkout</button>
+  </div>
+</div>

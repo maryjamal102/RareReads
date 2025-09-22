@@ -1,0 +1,35 @@
+<div class="checkout-form" >
+  <h2>Checkout Information</h2>
+  <form (ngSubmit)="onSubmit()" #checkoutForm="ngForm">
+    <label>
+      Full Name:
+      <input type="text" name="name" [(ngModel)]="checkoutData.name" required />
+    </label>
+
+    <label>
+      Email:
+      <input type="email" name="email" [(ngModel)]="checkoutData.email" required />
+    </label>
+
+    <label>
+      Address:
+      <textarea name="address" [(ngModel)]="checkoutData.address" required></textarea>
+    </label>
+
+    <label>
+      Phone:
+      <input type="number" [(ngModel)]="checkoutData.address" required>
+    </label>
+
+    <label>
+      Payment Method:
+      <select name="payment" [(ngModel)]="checkoutData.payment" required>
+        <option value="cash">Cash on Delivery</option>
+        <option value="card">Credit/Debit Card</option>
+      </select>
+    </label>
+
+    <button type="submit">Confirm Order</button>
+  </form>
+</div>
+

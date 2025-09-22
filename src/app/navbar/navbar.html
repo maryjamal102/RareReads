@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="left">
+  <div class="navbar-brand">Rare Reads.</div>
+<input
+  type="text"
+  [(ngModel)]="searchText"
+  (ngModelChange)="onSearchChange()"
+  placeholder="Search books..."
+  class="search-input"
+  *ngIf="login"
+> 
+  <button class="navbar-toggle" (click)="toggleMenu()">☰</button>
+</div>
+
+  <div class="right" [class.active]="menuOpen" id="navbarSupportedContent">
+    <a routerLink="home" routerLinkActive="active" (click)="closeMenu()">Home</a>
+    <a routerLink="category" routerLinkActive="active" (click)="closeMenu()" >Categories</a>
+    <a routerLink="portfolio" routerLinkActive="active" (click)="closeMenu()" >Contact Us</a>
+    <a routerLink="cart" class="cart-icon" (click)="cartClick.emit()" >🛒<span class="cart-count">{{ cartCount }}</span></a>
+</div>
+</nav>

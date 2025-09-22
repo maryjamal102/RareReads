@@ -1,0 +1,30 @@
+<div class="auth-container">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="firstName" placeholder="First Name"/>
+<div *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched" class="error">
+  First name is required and must start with a capital letter.
+</div>
+
+<input type="text" formControlName="lastName" placeholder="Last Name"/>
+<div *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched" class="error">
+  Last name is required and must start with a capital letter.
+</div>
+
+<input type="email" formControlName="email" placeholder="Email"/>
+<div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="error">
+  Please enter a valid email.
+</div>
+
+<input type="password" formControlName="password" placeholder="Password"/>
+<div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="error">
+  Password must be at least 6 characters.
+</div>
+
+  <button type="submit" [disabled]="registerForm.invalid">Sign Up</button>
+
+  <p>Already have an account? 
+    <a routerLink="/login" class="login">Log In</a>
+  </p>
+</form>
+</div>
